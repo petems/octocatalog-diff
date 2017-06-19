@@ -16,5 +16,5 @@ fi
 set -euf -o pipefail
 
 echo "Running the following command: git archive --format=tar "$OCD_GIT_EXTRACT_BRANCH" | ( cd "$OCD_GIT_EXTRACT_TARGET" && tar -xf - )"
-git checkout "$OCD_GIT_EXTRACT_BRANCH";
+git checkout -f "$OCD_GIT_EXTRACT_BRANCH";
 git archive --format=tar "$OCD_GIT_EXTRACT_BRANCH" | ( cd "$OCD_GIT_EXTRACT_TARGET" && tar -xf - )
