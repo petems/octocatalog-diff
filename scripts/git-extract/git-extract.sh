@@ -14,4 +14,6 @@ if [ -z "$OCD_GIT_EXTRACT_TARGET" ]; then
 fi
 
 set -euf -o pipefail
+
+echo "Running the following command: git archive --format=tar "$OCD_GIT_EXTRACT_BRANCH" | ( cd "$OCD_GIT_EXTRACT_TARGET" && tar -xf - )"
 git archive --format=tar "$OCD_GIT_EXTRACT_BRANCH" | ( cd "$OCD_GIT_EXTRACT_TARGET" && tar -xf - )
